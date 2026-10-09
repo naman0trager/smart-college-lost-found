@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindIt | Smart College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="FindIt home">
+        <span class="brand-mark">F</span>
+        <span>Find<span>It</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#recent-items">Browse items</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="report-button" type="button" data-open-modal>+ Report an item</button>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> SMART COLLEGE COMMUNITY</p>
+          <h1>Lost something?<br /><em>Let's find it.</em></h1>
+          <p class="hero-text">A small, easy way for students and staff to reconnect with the things that get left behind around campus.</p>
+          <div class="search-wrap">
+            <label class="search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
+              <input id="item-search" type="search" placeholder="Try “blue water bottle” or “keys”" />
+            </label>
+            <button type="button" id="search-button">Search</button>
+          </div>
+          <p class="search-note">Or <a href="#recent-items">look through recent reports</a></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="paper paper-back"></div>
+          <div class="paper paper-front">
+            <div class="paper-top"><span>FOUND ITEM</span><span class="dot"></span></div>
+            <div class="bottle">
+              <span class="bottle-cap"></span><span class="bottle-body"></span><span class="bottle-label">H₂O</span>
+            </div>
+            <p>Blue water bottle</p>
+            <small>Library · Today, 11:20 AM</small>
+            <div class="paper-line"></div>
+            <small>Someone might be looking for this.</small>
+          </div>
+          <div class="scribble">found<br />near the<br />library!</div>
+          <svg class="arrow" viewBox="0 0 108 74"><path d="M6 5c28 2 32 24 41 34 11 12 30 14 49 10M89 39l8 10-10 8" /></svg>
+        </div>
+      </section>
+
+      <section class="quick-actions" aria-label="Quick actions">
+        <button class="quick-card lost" type="button" data-open-modal data-type="Lost">
+          <span class="quick-icon">?</span>
+          <span><strong>I lost something</strong><small>Tell us what you are missing</small></span>
+          <b>→</b>
+        </button>
+        <button class="quick-card found" type="button" data-open-modal data-type="Found">
+          <span class="quick-icon">✓</span>
+          <span><strong>I found something</strong><small>Help return it to its owner</small></span>
+          <b>→</b>
+        </button>
+      </section>
+
+      <section id="how-it-works" class="steps-section">
+        <div class="section-intro">
+          <p class="eyebrow"><span></span> SIMPLE BY DESIGN</p>
+          <h2>How FindIt works</h2>
+          <p>Post it in a minute. We help bring the right people together.</p>
+        </div>
+        <div class="steps">
+          <article><span class="step-number">01</span><div class="line-art tag">⌁</div><h3>Report it</h3><p>Share a photo, where you saw it, and a few helpful details.</p></article>
+          <article><span class="step-number">02</span><div class="line-art match">↔</div><h3>We look for a match</h3><p>Our system compares reports so likely matches do not get missed.</p></article>
+          <article><span class="step-number">03</span><div class="line-art hand">✦</div><h3>Connect safely</h3><p>Confirm a few details and arrange pickup through the campus desk.</p></article>
+        </div>
+      </section>
+
+      <section id="recent-items" class="items-section">
+        <div class="items-heading">
+          <div><p class="eyebrow"><span></span> AROUND CAMPUS</p><h2>Recently reported</h2></div>
+          <div class="filters" aria-label="Filter items">
+            <button class="filter active" type="button" data-filter="all">All items</button>
+            <button class="filter" type="button" data-filter="lost">Lost</button>
+            <button class="filter" type="button" data-filter="found">Found</button>
+          </div>
+        </div>
+        <div class="items-grid" id="items-grid">
+          <article class="item-card" data-kind="found" data-category="Clothing / accessory" data-colour="black" data-location="sports complex" data-search="black umbrella rain shield found sports complex colour color foldable">
+            <div class="item-image umbrella"><span>☂</span><i>FOUND</i></div><div class="item-info"><h3>Black umbrella</h3><p>Sports Complex · 30 min ago</p><div class="item-facts"><span><b>Colour</b>Black</span><span><b>Detail</b>Foldable</span></div><a href="#report-modal" data-item="Black umbrella">This could be mine <b>→</b></a></div>
+          </article>
+          <article class="item-card" data-kind="lost" data-category="ID / card" data-colour="white blue" data-location="canteen" data-search="student id card identity card lost canteen white blue lanyard">
+            <div class="item-image idcard"><span>▣</span><i>LOST</i></div><div class="item-info"><h3>Student ID card</h3><p>Near Canteen · 1 hr ago</p><div class="item-facts"><span><b>Colour</b>White &amp; blue</span><span><b>Detail</b>Blue lanyard</span></div><a href="#report-modal" data-item="Student ID card">I have seen this <b>→</b></a></div>
+          </article>
+          <article class="item-card" data-kind="found" data-category="Electronics" data-colour="white" data-location="engineering block" data-search="wireless earbuds headphones found engineering block white charging case">
+            <div class="item-image earbuds"><span>◖ ◗</span><i>FOUND</i></div><div class="item-info"><h3>Wireless earbuds</h3><p>Engineering Block · 2 hrs ago</p><div class="item-facts"><span><b>Colour</b>White</span><span><b>Detail</b>Oval case</span></div><a href="#report-modal" data-item="Wireless earbuds">This could be mine <b>→</b></a></div>
+          </article>
+          <article class="item-card" data-kind="lost" data-category="Stationery / books" data-colour="navy blue" data-location="main library" data-search="blue notebook notes lost main library navy spiral initial n">
+            <div class="item-image notebook"><span>▤</span><i>LOST</i></div><div class="item-info"><h3>Blue notebook</h3><p>Main Library · Yesterday</p><div class="item-facts"><span><b>Colour</b>Navy blue</span><span><b>Detail</b>Initial “N”</span></div><a href="#report-modal" data-item="Blue notebook">I have seen this <b>→</b></a></div>
+          </article>
+        </div>
+        <p class="no-results" id="no-results" hidden>No items match that search yet. Try a different word or report your item.</p>
+      </section>
+
+      <section id="about" class="about-section">
+        <div><p class="eyebrow light"><span></span> MADE FOR SMART COLLEGE</p><h2>A kinder way to do lost &amp; found.</h2></div>
+        <p>Built as an AI-based matching system for our college community. It is here to make a frustrating little problem feel a little less frustrating.</p>
+        <button type="button" data-open-modal>Report an item <b>→</b></button>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="#home"><span class="brand-mark">F</span><span>Find<span>It</span></span></a><p>Smart College Lost &amp; Found · Student project</p><p>© 2025 FindIt</p></footer>
+
+    <dialog id="report-modal">
+      <form method="dialog" id="report-form">
+        <button class="close-modal" type="button" aria-label="Close">×</button>
+        <p class="eyebrow"><span></span> QUICK REPORT</p>
+        <h2>Tell us about it</h2>
+        <p class="form-help">More accurate details give the matching system a better chance.</p>
+        <fieldset class="type-toggle"><label><input type="radio" name="type" value="Lost" checked /> <span>I lost it</span></label><label><input type="radio" name="type" value="Found" /> <span>I found it</span></label></fieldset>
+        <label>What is the item?<input name="item" required placeholder="e.g. Blue water bottle" /></label>
+        <div class="form-row">
+          <label>Category<select name="category" required><option value="" selected disabled>Select one</option><option>Bag / wallet</option><option>Clothing / accessory</option><option>Electronics</option><option>ID / card</option><option>Keys</option><option>Stationery / books</option><option>Other</option></select></label>
+          <label>Colour<input name="colour" required placeholder="e.g. Navy blue" /></label>
+        </div>
+        <div class="form-row">
+          <label>Brand or label<input name="brand" placeholder="e.g. Milton, Apple" /></label>
+          <label>Where was it lost/found?<input name="location" required placeholder="e.g. Main Library" /></label>
+        </div>
+        <div class="form-row">
+          <label>Date<input name="date" type="date" required /></label>
+          <label>Approx. time<input name="time" type="time" /></label>
+        </div>
+        <label>Distinguishing details<textarea name="notes" required placeholder="Scratches, initials, case colour, what was inside, or another detail only the owner may know…"></textarea></label>
+        <p class="privacy-note">For safety, keep private identifiers out of the public description. We can use them later to confirm ownership.</p>
+        <button class="submit-report" type="submit">Submit report <b>→</b></button>
+      </form>
+      <div id="thanks" hidden><span class="thanks-mark">✓</span><h2>Report received!</h2><p id="report-summary">We will compare the item’s category, colour, location and time with reports from the Smart College community.</p><div class="match-result" id="match-result" hidden><strong id="match-title"></strong><span id="match-copy"></span></div><button type="button" id="done-button">Done</button></div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
